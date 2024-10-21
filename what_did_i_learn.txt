@@ -1,0 +1,75 @@
+vi to enter vim and provide content.
+"i" to begin typing
+esc < : < wq write and exit
+"less" to see less
+"grep" to group stuff
+"<" to insert results into command or file
+"|" pipe command to add conditonal statement/pass ouitput to another statement
+"-i" to make not case sensitive
+"ls" to list  files
+"ls -l" list vertically files
+"wc -l" count occurrences of soemthing
+"q" to exit
+"!" force/override
+"cd ~" to return home/ main home dir
+"cd" to enter other dirs
+"cat" read file
+"double TAB" so auto finish file name/ get similar  files names if more than one exists
+"pwd" path to working directory (shows the absaloute path from root)
+"cp" command to copy in the following manner: cp "source path" "destination" (if the destination is not a directory path, it will be copied to the current directory with whatever was written; otherwise, it will be copied to the destination path with the same file name).
+".." takes me one dir/file up
+" . " current directory (can be used with cp to copy file as is without renaming)
+"mv" moves files or renames them("source" "destination" or mv oldfilename.txt newfilename.txt)
+"rm" to remove files (can use delete as well) rm "file/dir to remove" (will prompt for conformation if its write protected)
+"rm -f" force remove no questions asked
+"mkdir" create new dir 
+"mv with .." can use the ".." to specify parent  dir or "." fro current dir instead of typing full file path to or from
+"rm -r" to remove a dir we msut first remove all its files to do that we use the "-r" to recursivley remove the contents and then delete the dir
+" -r" means recursive
+"top" Provides a real-time, dynamic view of the system's processes and resource usage. It updates automatically and allows for interactive process management (e.g., you can sort processes, kill them..
+"pressing q" allows us the exit "to" and "less" and overall pages/long reads
+"ps" processes in the system- only shows processes running in the current shell (your user session).
+"ps aux" Displays a static snapshot of all running processes at the time you run the command. It doesn't update automatically and is used for viewing process information at a specific moment.
+"echo" linux print statment (display a line or some var etc)
+"echo $$" gives the PID of the proccess
+"kill" The kill command sends signals to processes to terminate them(must know proccess id find using echo  - different signals to termiante processes meanign force kill soft kill etc)
+"whoami" tells me what my username is
+"root" is admin user/ top dir etc
+"super user" superuser is a user with elevated privileges who can perform administrative tasks. The root user is the default superuser account, with unrestricted access to the system,
+"sudo" do as superuser/ with full admin access orders
+"type of files:
+-: Regular file (normal file, like a text file or binary)
+d: Directory
+l: Symbolic link (a reference to another file)
+b: Block device (e.g., hard drive partitions)
+c: Character device (e.g., terminals, serial ports)
+p: Named pipe (FIFO - used for inter-process communication)
+s: Socket (used for network communication)
+"permissions for file":
+r: Read permission (allows reading the file)
+w: Write permission (allows modifying the file)
+x: Execute permission (allows executing the file as a program)
+-: No permission (indicates that the permission is not granted)
+Permission Categories:
+in a Linux file system, all files and directories will display permissions in three sets
+User (owner): The first set of three characters (e.g., rwx)
+Group: The second set of three characters (e.g., r-x)
+Others: The third set of three characters (e.g., r--)
+Example:
+-rwxr-xr--
+-: Regular file
+rwx: User has read, write, and execute permissions
+r-x: Group has read and execute permissions
+r--: Others have read permission only
+"user types linux:
+User (Owner): The individual who owns the file. This user has permissions set specifically for them.
+Group: A collection of users that share common access rights. The group owner of a file can have different permissions compared to the user (owner) and others.
+Others: All other users who are not the owner and do not belong to the group. They have the least specific permissions.
+" cd /" enters root dir
+"touch"  creates an empty file if it doesn't exist or updates the timestamps of an existing file to the current time.
+"ls -l some_file" this will show me that file/s as a list only quick way to search/find a file
+"sudo -i" amkes me into the root user (type exit to return to reguler user)
+"su -username" switches me to that username(can also be sued for switching to root user)
+"sudo apt-get install file_name" must act as root to install - the command to sintall package
+"SSH"  a secure protocol for remote command-line access to computers/ "ssh -i <path_to_pem_file> <user>@<ip_address>"
+"SCP" send file from local to server ""scp -i <path_to_pem_file> <path_to_file_being_sent>  <user>@<ip_address>:"

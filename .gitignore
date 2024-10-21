@@ -1,0 +1,18 @@
+# Ignore virtual environment files
+pyvenv.cfg
+d/
+
+# Ignore log files and databases
+*.log
+*.sqlite
+*.db
+
+# Ignore compiled python files
+__pycache__/
+*.py[cod]
+
+# Ignore macOS files
+.DS_Store
+
+# Ignore environment files
+.env
