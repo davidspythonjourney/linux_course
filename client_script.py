@@ -26,8 +26,8 @@ def createCsv(csv_info):
 
 def runScripts():
     get_word_counts = runServerScript()
-    bool_value = createCsv(get_word_counts)
-    if bool_value:
+    csv_success  = createCsv(get_word_counts)
+    if csv_success:
         print("All Done it worked hazah! but will Nadav approve? we shall see!")
     else:
         print("Something went wrong check your code bro or review your python course!!")
