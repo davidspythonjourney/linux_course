@@ -1,0 +1,33 @@
+import os
+from collections import Counter
+import subprocess
+import json
+import time
+
+def readFile(file_name: str):
+    if os.path.exists(file_name):
+        with open(file_name, "r") as log_file:
+            return log_file.readlines()
+           
+def grepLogToCounter():
+    key_words = ["INFO", "ERROR", "WARN"]
+    grep_file = "/var/log/syslog"
+    if os.path.exists(grep_file):
+        try:
+            join_search_words = "|".join(key_words)
+            command = f'grep -E "{join_search_words}" {grep_file}'
+            result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            count_word = Counter(result.stdout.split())
+            csv_info = {
+                "time": int(time.time()),
+                "info": count_word.get(key_words[0]), 
+                "error": count_word.get(key_words[1]), 
+                "warn": count_word.get(key_words[2]) 
+            }
+                print(json.dumps(csv_info))
+        except subprocess.CalledProcessError as e:
+            print(f"Command '{command}' returned non-zero exit status {e.returncode}")
+            print(f"Error output: {e.stderr}")
+            
+if __name__ == "__main__":
+    grepLogToCounter()
